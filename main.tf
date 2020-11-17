@@ -129,9 +129,10 @@ resource "aws_codebuild_project" "ci" {
   }
 
   environment {
-    compute_type = "${var.compute_type}"
-    image        = "${var.image}"
-    type         = "LINUX_CONTAINER"
+    compute_type                = "${var.compute_type}"
+    image                       = "${var.image}"
+    image_pull_credentials_type = ${var.image_credentials}"
+    type                        = "LINUX_CONTAINER"
 
     environment_variable = "${var.ci_env_var}"
   }
